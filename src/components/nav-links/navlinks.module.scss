@@ -1,0 +1,4 @@
+@use "src/styles/variables";
+.activeLink {
+  color: variables.$navbar-color;
+}

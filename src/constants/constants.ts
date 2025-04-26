@@ -1,0 +1,87 @@
+import { INavigation } from "@/types/navigation";
+
+export const NAVIGATION_LINKS: INavigation[] = [
+  {
+    label: "Home",
+    isActive: false
+  },
+  {
+    label: "Books",
+    isActive: true
+  },
+  {
+    label: "Reviews",
+    isActive: false
+  },
+  {
+    label: "News",
+    isActive: false
+  },
+  {
+    label: "Contacts",
+    isActive: false
+  }
+];
+
+const CATEGORIES_LINKS: INavigation[] = [
+  { label: "Art", isActive: false },
+  { label: "Contemporary", isActive: false },
+  { label: "Historical Fiction", isActive: false },
+  { label: "Biography", isActive: false },
+  { label: "Cookbooks", isActive: false },
+  { label: "Historv", isActive: false },
+  { label: "Business", isActive: false },
+  { label: "Crime", isActive: false },
+  { label: "Horror", isActive: false },
+  { label: "Chick Lit", isActive: false },
+  { label: "Ebooks", isActive: false },
+  { label: "Humor And Comedy", isActive: false },
+  { label: "Contacts", isActive: false },
+  { label: "Children's", isActive: false },
+  { label: "Fantasy", isActive: false },
+  { label: "Mang", isActive: false },
+  { label: "Christian", isActive: false },
+  { label: "Fiction", isActive: false },
+  { label: "Memoir", isActive: false },
+  { label: "Classics", isActive: false },
+  { label: "Gay And Lesbian", isActive: false },
+  { label: "Music", isActive: false },
+  { label: "Comics", isActive: false },
+  { label: "Graphic Novels", isActive: false }
+];
+
+const SOCIAL_MEDIA_LINKS: INavigation[] = [
+  {
+    label: "Facebook",
+    isActive: false
+  },
+  {
+    label: "Twitter",
+    isActive: false
+  },
+  {
+    label: "RSS",
+    isActive: false
+  }
+];
+
+export const footerSections = [
+  {
+    title: "NAVIGATION",
+    links: NAVIGATION_LINKS
+  },
+  {
+    title: "CATEGORIES",
+    links: CATEGORIES_LINKS
+  },
+  {
+    title: "FOLLOW US",
+    links: SOCIAL_MEDIA_LINKS
+  }
+];
+
+export const UI_COLORS = {
+  FOOTER_COLOR: "#787878",
+  LIGHT_GRAY: "#f6f6f6",
+  LIGHT_BLACK: "#151515"
+};

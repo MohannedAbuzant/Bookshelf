@@ -1,0 +1,23 @@
+@use "src/styles/variables";
+
+.sideContainer {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  position: absolute;
+  &[data-opened="true"] {
+    width: variables.$aside-width;
+    background: white;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    opacity: 1;
+  }
+}
+
+.nav {
+  a {
+    border-bottom: 1px solid lightgray;
+  }
+}

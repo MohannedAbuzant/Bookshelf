@@ -1,0 +1,11 @@
+@use "./variables";
+
+.btn-transparent {
+  background: transparent;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  &:hover {
+    background: rgba(177, 177, 177, 0.92);
+  }
+}

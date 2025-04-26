@@ -1,0 +1,31 @@
+@use "./variables";
+
+@each $index, $value in variables.$spaces {
+  .gap-#{$index} {
+    gap: $value;
+  }
+  .p-#{$index} {
+    padding: $value;
+  }
+  .pt-#{$index} {
+    padding-top: $value;
+  }
+  .py-#{$index} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+
+  .m-#{$index} {
+    margin: $value;
+  }
+  .mt-#{$index} {
+    margin-top: $value;
+  }
+  .mb-#{$index} {
+    margin-bottom: $value;
+  }
+  .my-#{$index} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}

@@ -1,0 +1,21 @@
+@use "./variables";
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+@each $alignment in variables.$alignments {
+  .align-items-#{$alignment} {
+    align-items: $alignment;
+  }
+}
+
+@each $alignment in variables.$justify-alignments-list {
+  .justify-content-#{$alignment} {
+    justify-content: $alignment;
+  }
+}
+
+.flex-column {
+  flex-direction: column;
+}

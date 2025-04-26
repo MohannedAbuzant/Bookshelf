@@ -1,0 +1,17 @@
+@use "sass:list";
+
+$navbar-color: #82b808;
+$footer-color: #323232;
+$alignments: center, baseline, end, start, space-between;
+$extra-alignments: stretch, space-around, space-evenly;
+$justify-alignments-list: list.join($alignments, $extra-alignments);
+$spaces: (
+  0: 0,
+  1: 8,
+  2: 16,
+  3: 24,
+  4: 32,
+  5: 40
+);
+$aside-width: 100%;
+$footer-text-color: #787878;
