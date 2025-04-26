@@ -1,4 +1,5 @@
 @use "./variables";
+@use "mixins" as *;
 
 .flex-wrap {
   flex-wrap: wrap;
@@ -8,14 +9,78 @@
   .align-items-#{$alignment} {
     align-items: $alignment;
   }
+  .align-items-md-#{$alignment} {
+    @include md {
+      align-items: $alignment;
+    }
+  }
+  .align-items-lg-#{$alignment} {
+    @include lg {
+      align-items: $alignment;
+    }
+  }
+  .align-items-xl-#{$alignment} {
+    @include xl {
+      align-items: $alignment;
+    }
+  }
 }
 
 @each $alignment in variables.$justify-alignments-list {
   .justify-content-#{$alignment} {
     justify-content: $alignment;
   }
+  .justify-content-md-#{$alignment} {
+    @include md {
+      justify-content: $alignment;
+    }
+  }
+  .justify-content-lg-#{$alignment} {
+    @include lg {
+      justify-content: $alignment;
+    }
+  }
+  .justify-content-xl-#{$alignment} {
+    @include xl {
+      justify-content: $alignment;
+    }
+  }
 }
 
 .flex-column {
   flex-direction: column;
+}
+
+@each $breakpoint,
+  $size
+    in (
+      null null,
+      md variables.$screen-md,
+      lg variables.$screen-lg,
+      xl variables.$screen-xl
+    )
+{
+  @for $i from 1 through 12 {
+    .col#{if($breakpoint == null, "", "-" + $breakpoint)}-#{$i} {
+      @if $breakpoint == null {
+        width: calc(($i/12) * 100%);
+      } @else {
+        @media (min-width: $size) {
+          width: calc(($i/12) * 100%);
+        }
+      }
+    }
+  }
+
+  @each $direction in (row, column) {
+    .flex#{if($breakpoint == null, "", "-" + $breakpoint)}-#{$direction} {
+      @if $breakpoint == null {
+        flex-direction: $direction;
+      } @else {
+        @media (min-width: $size) {
+          flex-direction: $direction;
+        }
+      }
+    }
+  }
 }

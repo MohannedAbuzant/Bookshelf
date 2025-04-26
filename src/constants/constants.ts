@@ -36,7 +36,6 @@ const CATEGORIES_LINKS: INavigation[] = [
   { label: "Chick Lit", isActive: false },
   { label: "Ebooks", isActive: false },
   { label: "Humor And Comedy", isActive: false },
-  { label: "Contacts", isActive: false },
   { label: "Children's", isActive: false },
   { label: "Fantasy", isActive: false },
   { label: "Mang", isActive: false },
@@ -68,20 +67,24 @@ const SOCIAL_MEDIA_LINKS: INavigation[] = [
 export const footerSections = [
   {
     title: "NAVIGATION",
-    links: NAVIGATION_LINKS
+    links: NAVIGATION_LINKS,
+    linkClassName: "col-12"
   },
   {
     title: "CATEGORIES",
-    links: CATEGORIES_LINKS
+    links: CATEGORIES_LINKS,
+    linkClassName: "col-12 col-lg-4"
   },
   {
     title: "FOLLOW US",
-    links: SOCIAL_MEDIA_LINKS
+    links: SOCIAL_MEDIA_LINKS,
+    linkClassName: "col-12"
   }
 ];
 
 export const UI_COLORS = {
   FOOTER_COLOR: "#787878",
   LIGHT_GRAY: "#f6f6f6",
-  LIGHT_BLACK: "#151515"
+  LIGHT_BLACK: "#151515",
+  GREEN: "#82b808"
 };

@@ -1,0 +1,18 @@
+@use "./variables";
+@use "mixins" as *;
+
+@include md {
+  .container {
+    margin-inline: 189px;
+  }
+}
+@include lg {
+  .container {
+    margin-inline: 230px;
+  }
+}
+@include xl {
+  .container {
+    margin-inline: 288px;
+  }
+}

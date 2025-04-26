@@ -13,8 +13,8 @@ const Navbar = ({ children }: { children: ReactNode }): ReactNode => {
   return (
     <>
       <header className={`${classes.nav}`}>
-        <div className="d-flex p-2  align-items-center h-100 gap-2 justify-content-center">
-          <a onClick={() => setIsAsideOpened(true)}>
+        <div className="align-items-center container d-flex gap-2 h-100 justify-content-center justify-content-lg-space-between justify-content-lg-start">
+          <a onClick={() => setIsAsideOpened(true)} className="d-lg-none">
             <Image
               src="/burger-menu.svg"
               width={30}
@@ -28,10 +28,21 @@ const Navbar = ({ children }: { children: ReactNode }): ReactNode => {
             width={30}
             height={40}
             alt="search logo"
+            className="d-lg-none"
           ></Image>
 
-          <nav className="d-none gap-2">
-            <Navlinks textColor="black" links={NAVIGATION_LINKS}></Navlinks>
+          <nav className="d-none d-lg-flex align-items-center gap-2">
+            <Navlinks
+              textColor="white"
+              links={NAVIGATION_LINKS}
+              activeColor="black"
+            ></Navlinks>
+            <Image
+              src="./search.svg"
+              width={30}
+              height={30}
+              alt="search logo"
+            ></Image>
           </nav>
 
           <Aside

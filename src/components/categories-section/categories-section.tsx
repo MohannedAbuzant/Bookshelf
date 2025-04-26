@@ -24,15 +24,21 @@ const CategoriesSection = async ({
   const data = (await request.json()) as IBook[];
   return (
     <section
-      className="d-flex  flex-column justify-content-center align-items-center py-5"
+      className="d-flex  flex-column  justify-content-center  align-items-center py-5"
       style={{ backgroundColor: backgroundColor }}
     >
       <Carousel title={title} carouselTitleColor={carouselTitleColor}>
         {data.map(({ image, title, id, author, reviewedBy }) => {
           return (
-            <figure style={{ margin: 0 }} key={id}>
-              <Image src={image} width={200} height={250} alt={title}></Image>
-              <figcaption className="text-align-center">
+            <figure className="m-0" key={id}>
+              <Image
+                src={image}
+                width={164}
+                height={250}
+                alt={title}
+                style={{ objectFit: "contain" }}
+              ></Image>
+              <figcaption className="text-align-center text-align-lg-start">
                 <p className="mt-2" style={{ color: bookTitleColor }}>
                   {title}
                 </p>

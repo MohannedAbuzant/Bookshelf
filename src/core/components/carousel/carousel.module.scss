@@ -1,4 +1,22 @@
+@use "@/styles/mixins" as *;
+
 .carouselContainer {
-  max-width: 200px;
+  max-width: 174px;
   overflow: hidden;
+}
+
+.carouselBody {
+  transition: transform 0.5s ease-in-out;
+}
+
+@include md {
+  .carouselContainer {
+    max-width: 340px;
+  }
+}
+
+@include lg {
+  .carouselContainer {
+    max-width: 900px;
+  }
 }

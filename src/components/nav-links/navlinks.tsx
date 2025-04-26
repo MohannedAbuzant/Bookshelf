@@ -1,13 +1,17 @@
 import React, { ReactNode } from "react";
 import Link from "next/link";
 import { INavigation } from "@/types/navigation";
-import classes from "./navlinks.module.scss";
+
 const Navlinks = ({
   textColor,
-  links
+  activeColor,
+  links,
+  linkClassName
 }: {
   textColor: string;
+  activeColor: string;
   links: INavigation[];
+  linkClassName?: string;
 }): ReactNode => {
   return (
     <>
@@ -16,8 +20,8 @@ const Navlinks = ({
           <Link
             href="#"
             key={label}
-            className={isActive ? `${classes.activeLink}` : ""}
-            style={{ color: !isActive ? textColor : "" }}
+            style={{ color: !isActive ? textColor : activeColor }}
+            className={linkClassName}
           >
             {label}
           </Link>

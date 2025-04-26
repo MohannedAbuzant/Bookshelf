@@ -19,7 +19,7 @@ const Carousel = ({
 
     setActiveSlide((prevState) => {
       const newActiveSlide = prevState + 1;
-      ref.current!.style.transform = `translate3d(${newActiveSlide * -215}px, 0, 0)`;
+      ref.current!.style.transform = `translate3d(${newActiveSlide * -180}px, 0, 0)`;
       return newActiveSlide;
     });
   };
@@ -29,7 +29,7 @@ const Carousel = ({
 
     setActiveSlide((prevState) => {
       const newActiveSlide = prevState - 1;
-      ref.current!.style.transform = `translate3d(${newActiveSlide * -215}px, 0, 0)`;
+      ref.current!.style.transform = `translate3d(${newActiveSlide * -180}px, 0, 0)`;
       return newActiveSlide;
     });
   };
@@ -38,6 +38,7 @@ const Carousel = ({
       <button
         aria-label="previous slide"
         onClick={() => previousSlideTriggered()}
+        className="cursor-pointer"
       >
         <Image
           src="/left-chevron.svg"
@@ -53,7 +54,7 @@ const Carousel = ({
         <section>
           <h3 className="mb-3">{title}</h3>
           <section
-            className={`d-flex gap-2 `}
+            className={`d-flex gap-2 ${classes.carouselBody}`}
             ref={ref}
             data-size="200"
             data-current={activeSlide}
@@ -63,7 +64,11 @@ const Carousel = ({
         </section>
       </section>
 
-      <button aria-label="next slide" onClick={() => nextSlideTriggered()}>
+      <button
+        aria-label="next slide"
+        onClick={() => nextSlideTriggered()}
+        className="cursor-pointer"
+      >
         <Image
           src="/right-chevron.svg"
           alt={"right chevron"}

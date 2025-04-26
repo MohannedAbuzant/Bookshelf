@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import classes from "./aside.module.scss";
 import Navlinks from "@/components/nav-links/navlinks";
-import { NAVIGATION_LINKS } from "@/constants/constants";
+import { NAVIGATION_LINKS, UI_COLORS } from "@/constants/constants";
 
 const Aside = ({
   isOpened,
@@ -22,7 +22,11 @@ const Aside = ({
         </button>
       </div>
       <nav className={`d-flex flex-column gap-2 ${classes.nav}`}>
-        <Navlinks textColor="black" links={NAVIGATION_LINKS}></Navlinks>
+        <Navlinks
+          textColor="black"
+          links={NAVIGATION_LINKS}
+          activeColor={UI_COLORS.GREEN}
+        ></Navlinks>
       </nav>
     </aside>
   );

@@ -4,12 +4,20 @@
   .gap-#{$index} {
     gap: $value;
   }
+
+  .col-gap-#{$index} {
+    column-gap: $value;
+  }
+  .row-gap-#{$index} {
+    row-gap: $value;
+  }
   .p-#{$index} {
     padding: $value;
   }
   .pt-#{$index} {
     padding-top: $value;
   }
+
   .py-#{$index} {
     padding-top: $value;
     padding-bottom: $value;
@@ -21,11 +29,36 @@
   .mt-#{$index} {
     margin-top: $value;
   }
+  .ml-#{$index} {
+    margin-left: $value;
+  }
   .mb-#{$index} {
     margin-bottom: $value;
   }
   .my-#{$index} {
     margin-top: $value;
     margin-bottom: $value;
+  }
+}
+
+@each $breakpoint,
+  $size
+    in (
+      null null,
+      md variables.$screen-md,
+      lg variables.$screen-lg,
+      xl variables.$screen-xl
+    )
+{
+  @each $index, $value in variables.$spaces {
+    .gap#{if($breakpoint == null, "", "-" + $breakpoint)}-#{$index} {
+      @if $breakpoint == null {
+        gap: $value;
+      } @else {
+        @media (min-width: $size) {
+          gap: $value;
+        }
+      }
+    }
   }
 }

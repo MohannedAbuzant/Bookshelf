@@ -1,7 +1,30 @@
+@use "./variables";
 .d-flex {
   display: flex;
 }
 
 .d-none {
   display: none;
+}
+
+@each $breakpoint,
+  $size
+    in (
+      null null,
+      md variables.$screen-md,
+      lg variables.$screen-lg,
+      xl variables.$screen-xl
+    )
+{
+  @each $display in (none, flex) {
+    .d#{if($breakpoint == null, "", "-" + $breakpoint)}-#{$display} {
+      @if $breakpoint == null {
+        display: $display;
+      } @else {
+        @media (min-width: $size) {
+          display: $display;
+        }
+      }
+    }
+  }
 }

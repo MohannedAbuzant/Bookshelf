@@ -1,3 +1,5 @@
+@use "./variables";
+
 .text-wrap-balance {
   text-wrap: balance;
 }
@@ -15,4 +17,26 @@
 
 .text-uppercase {
   text-transform: uppercase;
+}
+
+@each $breakpoint,
+  $size
+    in (
+      null null,
+      md variables.$screen-md,
+      lg variables.$screen-lg,
+      xl variables.$screen-xl
+    )
+{
+  @each $align in (center, start) {
+    .text-align#{if($breakpoint == null, "", "-" + $breakpoint)}-#{$align} {
+      @if $breakpoint == null {
+        text-align: $align;
+      } @else {
+        @media (min-width: $size) {
+          text-align: $align;
+        }
+      }
+    }
+  }
 }

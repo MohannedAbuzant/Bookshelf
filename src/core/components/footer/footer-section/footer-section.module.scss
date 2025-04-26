@@ -1,0 +1,16 @@
+@use "@/styles/variables";
+@use "@/styles/mixins" as *;
+
+.footerSectionContainer {
+  padding-top: 1rem;
+  border-top: 1px solid black;
+}
+
+@include lg {
+  .footerSectionContainer {
+    padding-left: 1rem;
+    border-left: 1px solid black;
+    padding-top: 0;
+    border-top: 0 solid black;
+  }
+}

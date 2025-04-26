@@ -1,0 +1,22 @@
+@use "./variables";
+
+// Tablet devices
+@mixin md {
+  @media (min-width: #{variables.$screen-md}) {
+    @content;
+  }
+}
+
+// Desktop devices
+@mixin lg {
+  @media (min-width: #{variables.$screen-lg}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{variables.$screen-xl}) {
+    @content;
+  }
+}

@@ -4,10 +4,10 @@ import FooterSection from "@/core/components/footer/footer-section/footer-sectio
 
 const Footer = (): ReactNode => {
   return (
-    <footer
-      className={`d-flex flex-column gap-3 py-2 ${classes.footerContainer}`}
-    >
-      <FooterSection></FooterSection>
+    <footer className={` ${classes.footerContainer}`}>
+      <section className="d-flex flex-column flex-lg-row gap-3 py-2 container">
+        <FooterSection></FooterSection>
+      </section>
     </footer>
   );
 };
