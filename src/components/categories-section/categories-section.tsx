@@ -33,7 +33,7 @@ const CategoriesSection = async ({
             <figure className="m-0" key={id}>
               <Image
                 src={image}
-                width={164}
+                width={146}
                 height={250}
                 alt={title}
                 style={{ objectFit: "contain" }}

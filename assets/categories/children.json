@@ -44,21 +44,21 @@
     },
     {
       "id": 7,
-      "image": "/images/books/children/books7.jpg",
+      "image": "/images/books/children/books1.jpg",
       "title": "Maecenas",
       "author": "Vestibulum turpis",
       "reviewedBy": "Etiam feugiat"
     },
     {
       "id": 8,
-      "image": "/images/books/children/books8.jpg",
+      "image": "/images/books/children/books2.jpg",
       "title": "Nam",
       "author": "Fusce vulputate",
       "reviewedBy": "Nunc nec"
     },
     {
       "id": 9,
-      "image": "/images/books/children/books9.jpg",
+      "image": "/images/books/children/books3.jpg",
       "title": "Suspendisse",
       "author": "Suspendisse pulvinar",
       "reviewedBy": "Phasellus volutpat"

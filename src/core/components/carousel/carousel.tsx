@@ -1,8 +1,10 @@
 "use client";
 
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import classes from "./carousel.module.scss";
 import Image from "next/image";
+import { getSlideWidth } from "@/utils/carousel";
+
 const Carousel = ({
   title,
   children,
@@ -14,12 +16,33 @@ const Carousel = ({
 }): ReactNode => {
   const ref = useRef<HTMLElement | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // do magic for resize
+      ref.current!.style.transform = `translate3d(0, 0, 0)`;
+      setActiveSlide(0);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const nextSlideTriggered = () => {
     if (!ref.current) return;
 
     setActiveSlide((prevState) => {
       const newActiveSlide = prevState + 1;
-      ref.current!.style.transform = `translate3d(${newActiveSlide * -180}px, 0, 0)`;
+      const { slideWidth, minNumberOfSlides } = getSlideWidth();
+
+      const totalSlides = Array.isArray(children) ? children.length : 1;
+      const slidesLeft = totalSlides - (minNumberOfSlides + activeSlide);
+      if (!slidesLeft) {
+        return prevState;
+      }
+      ref.current!.style.transform = `translate3d(${newActiveSlide * -slideWidth}px, 0, 0)`;
       return newActiveSlide;
     });
   };
@@ -29,7 +52,11 @@ const Carousel = ({
 
     setActiveSlide((prevState) => {
       const newActiveSlide = prevState - 1;
-      ref.current!.style.transform = `translate3d(${newActiveSlide * -180}px, 0, 0)`;
+      const { slideWidth } = getSlideWidth();
+      if (!prevState) {
+        return prevState;
+      }
+      ref.current!.style.transform = `translate3d(${newActiveSlide * -slideWidth}px, 0, 0)`;
       return newActiveSlide;
     });
   };

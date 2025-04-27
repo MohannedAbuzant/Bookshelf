@@ -1,7 +1,7 @@
 @use "@/styles/mixins" as *;
 
 .carouselContainer {
-  max-width: 174px;
+  max-width: 154px;
   overflow: hidden;
 }
 
@@ -11,12 +11,30 @@
 
 @include md {
   .carouselContainer {
-    max-width: 340px;
+    max-width: 415px;
+  }
+  .carouselBody img {
+    width: 130px;
+    height: 150px;
   }
 }
 
 @include lg {
   .carouselContainer {
+    max-width: 757px;
+  }
+  .carouselBody img {
+    width: 138px;
+    height: 189px;
+  }
+}
+
+@include xl {
+  .carouselContainer {
     max-width: 900px;
+  }
+  .carouselBody img {
+    width: 170px;
+    height: 243px;
   }
 }

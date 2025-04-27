@@ -83,8 +83,14 @@ export const footerSections = [
 ];
 
 export const UI_COLORS = {
-  FOOTER_COLOR: "#787878",
+  FOOTER_COLOR: "#b2b2b2",
   LIGHT_GRAY: "#f6f6f6",
   LIGHT_BLACK: "#151515",
   GREEN: "#82b808"
+};
+
+export const BREAK_POINTS = {
+  MD: 768,
+  LG: 1024,
+  XL: 1400
 };
