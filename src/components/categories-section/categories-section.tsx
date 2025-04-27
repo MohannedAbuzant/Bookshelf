@@ -49,9 +49,12 @@ const CategoriesSection = async ({
                     style={{ objectFit: "contain" }}
                   ></Image>
                   <figcaption className="text-align-center text-align-lg-start">
-                    <p className="mt-2" style={{ color: bookTitleColor }}>
+                    <h3
+                      className="mt-2"
+                      style={{ color: bookTitleColor, fontWeight: "normal" }}
+                    >
                       {title}
-                    </p>
+                    </h3>
                     <p
                       className="mt-1 fs-12  text-uppercase text-gray"
                       style={{ color: byTextColor }}

@@ -90,7 +90,8 @@ export const UI_COLORS = {
   FOOTER_COLOR: "#b2b2b2",
   LIGHT_GRAY: "#f6f6f6",
   LIGHT_BLACK: "#151515",
-  GREEN: "#82b808"
+  GREEN: "#82b808",
+  IMAGE_CAPTIONS: "#7c7c7c"
 };
 
 export const BREAK_POINTS = {

@@ -14,7 +14,7 @@ export default function Home() {
           backgroundColor={UI_COLORS.LIGHT_GRAY}
           bookTitleColor="black"
           carouselTitleColor="black"
-          byTextColor="black"
+          byTextColor={UI_COLORS.IMAGE_CAPTIONS}
         ></CategoriesSection>
 
         <CategoriesSection
@@ -32,7 +32,7 @@ export default function Home() {
           backgroundColor={UI_COLORS.LIGHT_GRAY}
           bookTitleColor="black"
           carouselTitleColor="black"
-          byTextColor="black"
+          byTextColor={UI_COLORS.IMAGE_CAPTIONS}
         ></CategoriesSection>
         <CategoriesSection
           title="Self Improvement"
