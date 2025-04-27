@@ -36,6 +36,7 @@ const Navbar = ({ children }: { children: ReactNode }): ReactNode => {
               textColor="white"
               links={NAVIGATION_LINKS}
               activeColor="black"
+              canShowChildrenExpandIcon={true}
             ></Navlinks>
             <Image
               src="/search.svg"

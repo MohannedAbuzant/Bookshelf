@@ -10,7 +10,8 @@ const CategoriesSection = async ({
   backgroundColor,
   carouselTitleColor,
   bookTitleColor,
-  byTextColor
+  byTextColor,
+  imageKey
 }: {
   title: string;
   categoryKey: string;
@@ -18,6 +19,7 @@ const CategoriesSection = async ({
   bookTitleColor: string;
   byTextColor: string;
   carouselTitleColor: string;
+  imageKey?: string;
 }): Promise<ReactNode> => {
   const request = await fetch(
     `http://localhost:3000/api/category?categoryType=${categoryKey}`
@@ -35,7 +37,7 @@ const CategoriesSection = async ({
               <Link
                 href={{
                   pathname: `/book/${id}`,
-                  query: { categoryType: categoryKey }
+                  query: { categoryType: imageKey || categoryKey }
                 }}
               >
                 <figure className="m-0">

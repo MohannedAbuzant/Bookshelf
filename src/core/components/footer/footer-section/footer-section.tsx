@@ -7,24 +7,31 @@ const FooterSection = (): ReactNode => {
   const sections = footerSections;
   return (
     <>
-      {sections.map(({ title: sectionTitle, links, linkClassName }) => {
-        return (
-          <section
-            className={`d-flex gap-2 flex-column  text-align-center flex-wrap text-align-lg-start ${classes.footerSectionContainer}`}
-            key={sectionTitle}
-          >
-            <h4 className="text-white">{sectionTitle}</h4>
-            <nav className="d-flex flex-column row-gap-1  flex-lg-row flex-wrap">
-              <Navlinks
-                textColor={UI_COLORS.FOOTER_COLOR}
-                activeColor={UI_COLORS.GREEN}
-                links={links}
-                linkClassName={linkClassName}
-              ></Navlinks>
-            </nav>
-          </section>
-        );
-      })}
+      {sections.map(
+        ({
+          title: sectionTitle,
+          links,
+          linkClassName,
+          footerSectionClassName
+        }) => {
+          return (
+            <section
+              className={`d-flex gap-2 flex-column  text-align-center flex-wrap text-align-lg-start ${classes.footerSectionContainer} ${footerSectionClassName}`}
+              key={sectionTitle}
+            >
+              <h4 className="text-white">{sectionTitle}</h4>
+              <nav className="d-flex flex-column row-gap-1  flex-lg-row flex-wrap">
+                <Navlinks
+                  textColor={UI_COLORS.FOOTER_COLOR}
+                  activeColor={UI_COLORS.GREEN}
+                  links={links}
+                  linkClassName={linkClassName}
+                ></Navlinks>
+              </nav>
+            </section>
+          );
+        }
+      )}
     </>
   );
 };

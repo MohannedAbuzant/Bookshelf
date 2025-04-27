@@ -3,16 +3,20 @@
 
 @include md {
   .container {
-    margin-inline: 189px;
+    margin-inline: auto;
+    width: 423px;
   }
 }
 @include lg {
   .container {
-    margin-inline: 230px;
+    margin: auto;
+    width: 800px;
   }
 }
+
 @include xl {
   .container {
-    margin-inline: 288px;
+    margin: auto;
+    width: 982px;
   }
 }

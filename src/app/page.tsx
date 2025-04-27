@@ -37,6 +37,7 @@ export default function Home() {
         <CategoriesSection
           title="Self Improvement"
           categoryKey="self_improvement"
+          imageKey="nonfiction"
           backgroundColor={UI_COLORS.LIGHT_BLACK}
           bookTitleColor="white"
           carouselTitleColor="white"

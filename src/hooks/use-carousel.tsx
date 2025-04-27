@@ -12,7 +12,6 @@ const useCarousel = ({
 
   useEffect(() => {
     const handleResize = () => {
-      // do magic for resize
       ref.current!.style.transform = `translate3d(0, 0, 0)`;
       setActiveSlide(0);
     };
