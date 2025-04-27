@@ -14,12 +14,8 @@
   .p-#{$index} {
     padding: $value;
   }
-  .pt-#{$index} {
-    padding-top: $value;
-  }
 
-  .py-#{$index} {
-    padding-top: $value;
+  .pb-#{$index} {
     padding-bottom: $value;
   }
 
@@ -57,6 +53,24 @@
       } @else {
         @media (min-width: $size) {
           gap: $value;
+        }
+      }
+    }
+    .pt#{if($breakpoint == null, "", "-" + $breakpoint)}-#{$index} {
+      @if $breakpoint == null {
+        padding-top: $value;
+      } @else {
+        @media (min-width: $size) {
+          padding-top: $value;
+        }
+      }
+    }
+    .py#{if($breakpoint == null, "", "-" + $breakpoint)}-#{$index} {
+      @if $breakpoint == null {
+        padding: $value 0 $value 0;
+      } @else {
+        @media (min-width: $size) {
+          padding: $value 0 $value 0;
         }
       }
     }

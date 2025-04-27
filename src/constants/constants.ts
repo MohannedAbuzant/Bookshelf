@@ -69,19 +69,19 @@ export const footerSections = [
   {
     title: "NAVIGATION",
     links: NAVIGATION_LINKS,
-    linkClassName: "col-12",
+    linkClassName: "col-12 pb-1",
     footerSectionClassName: "col-lg-3"
   },
   {
     title: "CATEGORIES",
     links: CATEGORIES_LINKS,
-    linkClassName: "col-12 col-lg-4",
+    linkClassName: "col-12 col-lg-4 pb-1",
     footerSectionClassName: "col-lg-7"
   },
   {
     title: "FOLLOW US",
     links: SOCIAL_MEDIA_LINKS,
-    linkClassName: "col-12",
+    linkClassName: "col-12 pb-1",
     footerSectionClassName: "col-lg-2"
   }
 ];
