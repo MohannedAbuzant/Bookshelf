@@ -5,3 +5,8 @@ export interface IBook {
   reviewedBy: string;
   title: string;
 }
+
+export interface IBookDetails extends IBook {
+  publishedOn: string;
+  description: string;
+}

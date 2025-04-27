@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import Carousel from "@/core/components/carousel/carousel";
 import Image from "next/image";
 import { IBook } from "@/types/book";
+import Link from "next/link";
 
 const CategoriesSection = async ({
   title,
@@ -30,32 +31,41 @@ const CategoriesSection = async ({
       <Carousel title={title} carouselTitleColor={carouselTitleColor}>
         {data.map(({ image, title, id, author, reviewedBy }) => {
           return (
-            <figure className="m-0" key={id}>
-              <Image
-                src={image}
-                width={146}
-                height={250}
-                alt={title}
-                style={{ objectFit: "contain" }}
-              ></Image>
-              <figcaption className="text-align-center text-align-lg-start">
-                <p className="mt-2" style={{ color: bookTitleColor }}>
-                  {title}
-                </p>
-                <p
-                  className="mt-1 fs-12  text-uppercase text-gray"
-                  style={{ color: byTextColor }}
-                >
-                  BY {author}
-                </p>
-                <p
-                  className="mt-1 fs-12 text-uppercase text-gray"
-                  style={{ color: byTextColor }}
-                >
-                  REVIEWED BY {reviewedBy}
-                </p>
-              </figcaption>
-            </figure>
+            <nav key={id}>
+              <Link
+                href={{
+                  pathname: `/book/${id}`,
+                  query: { categoryType: categoryKey }
+                }}
+              >
+                <figure className="m-0">
+                  <Image
+                    src={image}
+                    width={146}
+                    height={250}
+                    alt={title}
+                    style={{ objectFit: "contain" }}
+                  ></Image>
+                  <figcaption className="text-align-center text-align-lg-start">
+                    <p className="mt-2" style={{ color: bookTitleColor }}>
+                      {title}
+                    </p>
+                    <p
+                      className="mt-1 fs-12  text-uppercase text-gray"
+                      style={{ color: byTextColor }}
+                    >
+                      BY {author}
+                    </p>
+                    <p
+                      className="mt-1 fs-12 text-uppercase text-gray"
+                      style={{ color: byTextColor }}
+                    >
+                      REVIEWED BY {reviewedBy}
+                    </p>
+                  </figcaption>
+                </figure>
+              </Link>
+            </nav>
           );
         })}
       </Carousel>

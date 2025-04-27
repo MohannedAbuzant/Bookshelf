@@ -24,7 +24,7 @@ const Navbar = ({ children }: { children: ReactNode }): ReactNode => {
           </a>
           <Logo />
           <Image
-            src="./search.svg"
+            src="/search.svg"
             width={30}
             height={40}
             alt="search logo"
@@ -38,7 +38,7 @@ const Navbar = ({ children }: { children: ReactNode }): ReactNode => {
               activeColor="black"
             ></Navlinks>
             <Image
-              src="./search.svg"
+              src="/search.svg"
               width={30}
               height={30}
               alt="search logo"

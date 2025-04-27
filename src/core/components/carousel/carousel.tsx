@@ -1,9 +1,9 @@
 "use client";
 
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useRef } from "react";
 import classes from "./carousel.module.scss";
 import Image from "next/image";
-import { getSlideWidth } from "@/utils/carousel";
+import useCarousel from "@/hooks/use-carousel";
 
 const Carousel = ({
   title,
@@ -15,51 +15,8 @@ const Carousel = ({
   carouselTitleColor: string;
 }): ReactNode => {
   const ref = useRef<HTMLElement | null>(null);
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      // do magic for resize
-      ref.current!.style.transform = `translate3d(0, 0, 0)`;
-      setActiveSlide(0);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  const nextSlideTriggered = () => {
-    if (!ref.current) return;
-
-    setActiveSlide((prevState) => {
-      const newActiveSlide = prevState + 1;
-      const { slideWidth, minNumberOfSlides } = getSlideWidth();
-
-      const totalSlides = Array.isArray(children) ? children.length : 1;
-      const slidesLeft = totalSlides - (minNumberOfSlides + activeSlide);
-      if (!slidesLeft) {
-        return prevState;
-      }
-      ref.current!.style.transform = `translate3d(${newActiveSlide * -slideWidth}px, 0, 0)`;
-      return newActiveSlide;
-    });
-  };
-
-  const previousSlideTriggered = () => {
-    if (!ref.current) return;
-
-    setActiveSlide((prevState) => {
-      const newActiveSlide = prevState - 1;
-      const { slideWidth } = getSlideWidth();
-      if (!prevState) {
-        return prevState;
-      }
-      ref.current!.style.transform = `translate3d(${newActiveSlide * -slideWidth}px, 0, 0)`;
-      return newActiveSlide;
-    });
-  };
+  const { activeSlide, previousSlideTriggered, nextSlideTriggered } =
+    useCarousel({ ref, children });
   return (
     <section className="d-flex align-items-center gap-3">
       <button
