@@ -7,6 +7,7 @@ Follow these steps to set up and run the project locally:
 Run the following command to install all required packages:
 
 ```bash
+npm install --save-dev husky
 npm install
 ```
 
